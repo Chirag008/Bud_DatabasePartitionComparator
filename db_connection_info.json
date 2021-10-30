@@ -1,0 +1,8 @@
+{
+  "db_connection":
+    {
+       "username" : "SYSTEM",
+       "password" : "oracle",
+       "dsn" : "laptop-me8vkqpk:1521/XE"
+    }
+}

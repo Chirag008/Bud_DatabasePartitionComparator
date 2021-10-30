@@ -1,0 +1,389 @@
+<html>
+  <head>
+    <title>Automation Report</title>
+    <style type="text/css">
+    	.table-header{
+      	background-color:silver;
+      }
+
+      .page{
+      	background-color: cadetblue;
+      }
+
+      td.pass{
+      	color:green;
+        font-weight: bold;
+      }
+
+      td.fail{
+      	color:darkred;
+        font-weight: bold;
+      }
+
+      td.error{
+      	color:goldenrod;
+        font-weight: bold;
+      }
+
+      td.mismatch{
+          background-color: goldenrod;
+      }
+
+      tr {
+      	text-align: center;
+        font-family: verdana,serif;
+      }
+
+      tr.blankrow{
+          background-color: #9FA05F;
+      }
+
+      td {
+        padding: 10px;
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+
+      .summary-table {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      tr.summary-table-header{
+        background-color: goldenrod;
+        font-family: Verdana,serif;
+      }
+      td.summary-all{
+        font-weight: bold;
+        background-color: mediumslateblue;
+      }
+      td.summary-pass{
+        font-weight: bold;
+        background-color: darkgreen;
+      }
+      td.summary-fail{
+        font-weight: bold;
+        background-color: darkred;
+      }
+      td.summary-error{
+          font-weight: bold;
+          background-color: darkgoldenrod;
+      }
+
+      .scenario-filter-table{
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      td.radio{
+        padding: 10px;
+        border: none;
+        border-collapse: collapse;
+      }
+
+      .radio-big {
+        width: 1.5em; height: 1.5em;
+      }
+
+      td.meta-header{
+          font-weight: bold;
+          background-color: #A0655F;
+          padding: 2px;
+      }
+
+      td.meta-data{
+          background-color: #9FA05F;
+          padding: 2px;
+      }
+
+      pre{
+          font-family: Verdana,serif;
+          font-size: medium;
+      }
+
+    </style>
+  </head>
+
+  <body class="page">
+    <br><br>
+    <div style="text-align: center; font-family: Verdana,serif; color:#a71d5d ">
+      <h2>comparison_sales_table</h2>
+    </div>
+    <div>
+      <br>
+      <div>
+        <table id="report-meta-data">
+            <tr id="meta-data-execution-time">
+               <td class="meta-header">Report Execution Time </td>
+               <td class="meta-data">2021-10-30 12:42:38</td>
+            </tr>
+            <tr id="meta-data-env">
+                <td class="meta-header">Environment </td>
+                <td class="meta-data">DEV</td>
+            </tr>
+        </table>
+    </div>
+    <br><br><br><br><br>
+    <div>
+      <table class="summary-table" style="width: 50%; alignment: center">
+        <tr class="summary-table-header">
+          <th>Total Scenarios</th>
+          <th>Total Passed</th>
+          <th>Total Failed</th>
+          <th>Total Error</th>
+        </tr>
+        
+<tr> 
+<td class="summary-all">6</td>
+<td class="summary-pass">2</td>
+<td class="summary-fail">4</td>
+<td class="summary-error">0</td>
+</tr>
+
+      </table>
+      </div>
+    <br><br><br><br>
+
+      <div>
+      <table class='scenario-filter-table' style="width: 50%">
+        <tr>
+          <td class="radio" style="width:34%">
+            <label class="radio-inline" style="color: darkblue; font-weight: bold;">
+              <input type="radio" name="scenario-filter" class="radio-big" onchange="filter_scenarios()" checked>All
+            </label>
+          </td>
+         <td class="radio" style="width:22%">
+           <label class="radio-inline" style="color: darkgreen; font-weight: bold;">
+                <input type="radio" name="scenario-filter" class="radio-big" onchange="filter_scenarios()">Pass
+           </label>
+         </td>
+         <td class="radio" style="width:22%">
+           <label class="radio-inline" style="color: darkred; font-weight: bold;">
+                <input type="radio" name="scenario-filter" class="radio-big" onchange="filter_scenarios()">Fail
+           </label>
+         </td>
+         <td class="radio" style="width:22%">
+           <label class="radio-inline" style="color: goldenrod; font-weight: bold;">
+                <input type="radio" name="scenario-filter" class="radio-big" onchange="filter_scenarios()">Error
+           </label>
+         </td>
+        </tr>
+      </table>
+      </div>
+
+        <br><br><br>
+
+    <table style="width:100%;" id="report-data">
+      <tr class="table-header">
+        <th style="width:5%">Scenario No.</th>
+      	<th style="width:20%">Test Scenario</th>
+      	<th>year</th><th>product</th><th>amt</th>
+        <th style="width:5%">Status</th>
+        <th style="width:10%">Comments</th>
+     </tr>
+     
+<tr class="fail">
+<td>1</td>
+<td>Comparing DB row </td>
+<td>2014</td>
+<td>p2</td>
+<td>3344.44</td>
+<td class="fail">fail</td>
+<td style="word-wrap: break-word"></td>
+</tr>
+
+<tr class="fail">
+<td></td>
+<td></td>
+<td>2015</td>
+<td>p2</td>
+<td class="mismatch">3004.44</td>
+<td class="fail"></td>
+<td style="word-wrap: break-word"></td>
+</tr>
+
+<tr class="fail blankrow">
+<td></td>
+<td></td>
+<td></td><td></td><td></td><td class="fail"></td>
+<td style="word-wrap: break-word"></td>
+</tr>
+
+<tr class="fail">
+<td>2</td>
+<td>Comparing DB row </td>
+<td>2014</td>
+<td>p3</td>
+<td>3344.44</td>
+<td class="fail">fail</td>
+<td style="word-wrap: break-word"></td>
+</tr>
+
+<tr class="fail">
+<td></td>
+<td></td>
+<td>2015</td>
+<td>p3</td>
+<td class="mismatch">3004.44</td>
+<td class="fail"></td>
+<td style="word-wrap: break-word"></td>
+</tr>
+
+<tr class="fail blankrow">
+<td></td>
+<td></td>
+<td></td><td></td><td></td><td class="fail"></td>
+<td style="word-wrap: break-word"></td>
+</tr>
+
+<tr class="fail">
+<td>3</td>
+<td>Comparing DB row </td>
+<td>2014</td>
+<td>p4</td>
+<td>3344.44</td>
+<td class="fail">fail</td>
+<td style="word-wrap: break-word"></td>
+</tr>
+
+<tr class="fail">
+<td></td>
+<td></td>
+<td>2015</td>
+<td>p4</td>
+<td class="mismatch">3004.44</td>
+<td class="fail"></td>
+<td style="word-wrap: break-word"></td>
+</tr>
+
+<tr class="fail blankrow">
+<td></td>
+<td></td>
+<td></td><td></td><td></td><td class="fail"></td>
+<td style="word-wrap: break-word"></td>
+</tr>
+
+<tr class="fail">
+<td>4</td>
+<td>Comparing DB row </td>
+<td>2014</td>
+<td>p5</td>
+<td>3344.44</td>
+<td class="fail">fail</td>
+<td style="word-wrap: break-word"></td>
+</tr>
+
+<tr class="fail">
+<td></td>
+<td></td>
+<td>2015</td>
+<td>p5</td>
+<td class="mismatch">3004.44</td>
+<td class="fail"></td>
+<td style="word-wrap: break-word"></td>
+</tr>
+
+<tr class="fail blankrow">
+<td></td>
+<td></td>
+<td></td><td></td><td></td><td class="fail"></td>
+<td style="word-wrap: break-word"></td>
+</tr>
+
+<tr class="pass">
+<td>5</td>
+<td>Comparing DB row </td>
+<td>2014</td>
+<td>p6</td>
+<td>100.0</td>
+<td class="pass">pass</td>
+<td style="word-wrap: break-word"></td>
+</tr>
+
+<tr class="pass">
+<td></td>
+<td></td>
+<td>2015</td>
+<td>p6</td>
+<td>100.0</td>
+<td class="pass"></td>
+<td style="word-wrap: break-word"></td>
+</tr>
+
+<tr class="pass blankrow">
+<td></td>
+<td></td>
+<td></td><td></td><td></td><td class="pass"></td>
+<td style="word-wrap: break-word"></td>
+</tr>
+
+<tr class="pass">
+<td>6</td>
+<td>Comparing DB row </td>
+<td>2014</td>
+<td>p7</td>
+<td>100.0</td>
+<td class="pass">pass</td>
+<td style="word-wrap: break-word"></td>
+</tr>
+
+<tr class="pass">
+<td></td>
+<td></td>
+<td>2015</td>
+<td>p7</td>
+<td>100.0</td>
+<td class="pass"></td>
+<td style="word-wrap: break-word"></td>
+</tr>
+
+<tr class="pass blankrow">
+<td></td>
+<td></td>
+<td></td><td></td><td></td><td class="pass"></td>
+<td style="word-wrap: break-word"></td>
+</tr>
+
+    </table>
+    </div>
+
+    <script>
+      function filter_scenarios() {
+        const radios = document.getElementsByName("scenario-filter");
+        const data_table = document.getElementById("report-data");
+        const rows = data_table.getElementsByTagName("tr");
+        if(radios[0].checked){
+          for(let i=1; i<rows.length; i++){
+              rows[i].style.display = "table-row";
+          }
+        }else if(radios[1].checked){
+          for(let i=1; i<rows.length; i++){
+            if(rows[i].className==="pass") {
+              rows[i].style.display = "table-row";
+            }else{
+              rows[i].style.display = "none";
+            }
+          }
+        }else if(radios[2].checked){
+          for(let i=1; i<rows.length; i++){
+            if(rows[i].className==="fail") {
+              rows[i].style.display = "table-row";
+            }else{
+              rows[i].style.display = "none";
+            }
+          }
+        }else{
+            for(let i=1; i<rows.length; i++){
+            if(rows[i].className==="error") {
+              rows[i].style.display = "table-row";
+            }else{
+              rows[i].style.display = "none";
+            }
+          }
+        }
+
+      }
+    </script>
+  </body>
+
+</html>

@@ -1,0 +1,12 @@
+{
+
+  "comparison": [
+    {
+      "report_name": "comparison_sales_table.html",
+      "table_name": "sales",
+      "number_of_records_to_match" : 20,
+      "partitions_to_compare" : ["P1" , "P2"]
+    }
+  ]
+
+}
